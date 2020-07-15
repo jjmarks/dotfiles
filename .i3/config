@@ -72,6 +72,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # focus_follows_mouse no
 
 # change focus
+# vim-like controls
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
