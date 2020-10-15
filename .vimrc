@@ -25,8 +25,9 @@ Plug 'morhetz/gruvbox'
 Plug 'sirver/ultisnips'
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
-	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 call plug#end()
+
+inoremap <S-tab> <C-o>$
 
 autocmd vimenter * colorscheme gruvbox
