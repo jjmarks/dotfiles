@@ -420,4 +420,10 @@ mode "$mode_gaps_outer" {
 
 exec protonmail-bridge
 exec thunderbird
+
+exec keepassxc
+
 assign[class="ProtonMail Bridge"] $ws4
+assign[class="Thunderbird"] $ws4
+
+assign[class="KeePassXC"] $ws8
