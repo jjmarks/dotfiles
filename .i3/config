@@ -8,8 +8,9 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 5
+default_border pixel 5 
 default_floating_border normal
+for_window [class=".*"] border pixel 5
 
 # Hide borders
 hide_edge_borders none
@@ -160,6 +161,16 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+
+# set workspace per screen
+workspace $ws1 output DP-0
+workspace $ws2 output DP-0 
+workspace $ws3 output DP-0
+workspace $ws4 output DP-0
+workspace $ws5 output DP-0
+workspace $ws6 output DVI-I-1
+workspace $ws7 output DVI-I-1
+workspace $ws8 output DP-0
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
