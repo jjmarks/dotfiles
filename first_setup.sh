@@ -43,7 +43,7 @@ sudo cat .Xresources > ~/.Xresources
 xrdb ~/.Xresources
 
 echo "Loading i3 Config..."
-sudo cat config > ~/.i3/config
+sudo cat /.i3/config > ~/.i3/config
 
 echo
 echo "Xresources Loaded. Terminal font size changed."

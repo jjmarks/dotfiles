@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/joe/ownCloud/Misc Backups/applications/internships2021'
-let g:netrw_dirhist_3='/home/joe/ownCloud/School/Stage 3/MAS3915_StatsAndBigData'
-let g:netrw_dirhist_2='/home/joe/ownCloud/School/Stage 3/MAS3812_AdvancedFluidsAndComputing/Semester1/mynotes'
-let g:netrw_dirhist_1='/home/joe/ownCloud/School/Stage 3/MAS3913_LinearAndGeneralModels/Semester1'
