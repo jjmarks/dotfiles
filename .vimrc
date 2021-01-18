@@ -23,6 +23,13 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 
 Plug 'townk/vim-autoclose', { 'for': 'tex' }
 
+"Python plugins
+Plug 'vim-scripts/indentpython.vim', { 'for': 'py' }
+"see Arch install instruction for below to work
+Plug 'Valloric/YouCompleteMe', { 'for': 'py' } 
+Plug 'vim-syntastic/syntastic', { 'for': 'py' } 
+Plug 'nvie/vim-flake8', { 'for': 'py' } 
+
 "Global plugins
 Plug 'morhetz/gruvbox'
 Plug 'sirver/ultisnips'
@@ -34,10 +41,23 @@ call plug#end()
 "Shift-tab to skip past last character of line
 inoremap <S-tab> <C-o>$
 
-autocmd vimenter * ++nested colorscheme gruvbox
+"PEP 8 Python Options
+let python_highlight_all=1
+syntax on
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set colorcolumn=79 |
+    \ set fileformat=unix
 
 "Automatic vertical centering
 augroup KeepCentered
   autocmd!
   autocmd CursorMoved * normal! zz
 augroup END
+
+autocmd vimenter * ++nested colorscheme gruvbox
