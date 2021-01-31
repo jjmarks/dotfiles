@@ -11,9 +11,15 @@ set spell spelllang=en_gb
 
 call plug#begin('~/.vim/plugged')
 
+"Syntax highlighting
+Plug 'dense-analysis/ale'
+
 "CPP plugins
-Plug 'dense-analysis/ale', { 'for': 'cpp' }
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
+
+
+"Fortran plugins
+Plug 'rudrab/vimf90', { 'for': 'f95' }
 
 "TeX plugins
 Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -46,6 +52,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" extra thing to fix bugs
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
 
 "Shift-tab to skip past last character of line
 inoremap <S-tab> <C-o>$
@@ -55,6 +64,7 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 "PEP 8 Python Options
 let python_highlight_all=1
+let g:syntastic_check_on_open = 1
 syntax on
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
