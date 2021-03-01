@@ -12,7 +12,7 @@ set spell spelllang=en_gb
 call plug#begin('~/.vim/plugged')
 
 "Syntax highlighting
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "CPP plugins
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
@@ -31,7 +31,6 @@ Plug 'townk/vim-autoclose', { 'for': 'tex' }
 "Python plugins
 Plug 'vim-scripts/indentpython.vim', { 'for': 'py' }
 "see Arch install instruction for below to work
-Plug 'Valloric/YouCompleteMe', { 'for': 'py' } 
 Plug 'vim-syntastic/syntastic', { 'for': 'py' } 
 Plug 'nvie/vim-flake8', { 'for': 'py' } 
 
@@ -40,24 +39,11 @@ Plug 'morhetz/gruvbox'
 Plug 'sirver/ultisnips'
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
-Plug 'ervandew/supertab'
 
 call plug#end()
 
-" Use Supertab for YCM/UltiSnips Compatibility
-" https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-" extra thing to fix bugs
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:AutoClosePumvisible = {"ENTER": "", "ESC": ""}
-
-"Shift-tab to skip past last character of line
-inoremap <S-tab> <C-o>$
+"Ctrl-f to skip past parenthesis
+inoremap <C-f> <right>
 
 "Correct spelling mistakes with Ctrl-L
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -75,6 +61,20 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set colorcolumn=79 |
     \ set fileformat=unix
+
+" Fortran style option
+let fortran_linter = -1
+let g:fprettify_options = ''
+au BufNewFile,BufRead *.f95
+    \ set tabstop=3 |
+    \ set softtabstop=3 |
+    \ set shiftwidth=3 |
+    \ set textwidth=132 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set colorcolumn=132 |
+    \ set fileformat=unix
+let g:coc_start_at_startup = 0
 
 "Automatic vertical centering
 augroup KeepCentered

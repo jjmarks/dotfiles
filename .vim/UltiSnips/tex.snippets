@@ -55,6 +55,10 @@ snippet note "note" b
 \note{$0}
 endsnippet
 
+snippet it "it" i
+\textit{$0}
+endsnippet
+
 context "math()"
 snippet trace "trace" Ai
 \mathrm{trace}\qty($0)
@@ -469,7 +473,7 @@ $0
 endsnippet
 
 context "math()"
-snippet mcal "mathcal" iA
+snippet mcal "mathcal" i
 \mathcal{$1}$0
 endsnippet
 
@@ -498,7 +502,7 @@ snippet eps "cdot" iA
 endsnippet
 
 context "math()"
-snippet norm "norm" iA
+snippet norm "norm" i
 \norm{$1} $0
 endsnippet
 
@@ -676,7 +680,7 @@ endsnippet
 
 priority 10
 context "math()"
-snippet "hat" "hat" riA
+snippet "hat" "hat" ri
 \hat{$1}$0
 endsnippet
 
@@ -684,6 +688,12 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "inv" "inv" riA
+{$1}^{-1}$0
 endsnippet
 
 priority 10
