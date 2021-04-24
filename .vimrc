@@ -8,6 +8,8 @@ set relativenumber
 set colorcolumn=110
 set textwidth=110
 set spell spelllang=en_gb
+set mouse=a "Use mouse
+set clipboard=unnamedplus "Use system clipboard
 
 call plug#begin('~/.vim/plugged')
 
